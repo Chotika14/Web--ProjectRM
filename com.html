@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="com_css.css">
+    <title>KHON KAEN UNIVERSITY</title>
+
+
+    <script>
+        // ฟังก์ชั่นสำหรับ moveLogo
+        // function moveLogo() {
+        //     var logo = document.querySelector('.sidebar-logo img');
+        //     var sidebarLogo = document.querySelector('.sidebar-logo');
+        //     if (logo.classList.contains('moved')) {
+        //         sidebarLogo.insertBefore(logo, sidebarLogo.firstChild);
+        //         logo.classList.remove('moved');
+        //     } else {
+        //         sidebarLogo.appendChild(logo);
+        //         logo.classList.add('moved');
+        //     }
+        // }
+        // ฟังก์ชั่นสำหรับตรวจสอบเบอร์โทรศัพท์
+        // function validatePhoneNumber(phoneNumber) {
+        //     // ใช้ regular expression เพื่อตรวจสอบว่าเป็นตัวเลข 10 ตัวหรือไม่
+        //     var phonePattern = /^[0-9]{10}$/;
+        //     return phonePattern.test(phoneNumber);
+        // }
+
+        // เมื่อกด submit ให้เรียกฟังก์ชั่นนี้เพื่อตรวจสอบเบอร์โทรศัพท์
+        function validateForm() {
+            var type = document.getElementById('type').value;
+            var caterogy = document.getElementById('caterogy').value;
+            var detail = document.getElementById('detail').value;
+            // var contact = document.getElementById('contact').value; // เพิ่มเบอร์โทรศัพท์
+
+            if (type && caterogy && detail) { // เพิ่มเงื่อนไขการตรวจสอบเบอร์โทรศัพท์
+                alert('ข้อมูลครบถ้วนแล้ว');
+                window.location.href = 'comDetail.html'; // เชื่อมไปยังหน้า comDetail.html
+            } else {
+                alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <img src="Logokku.png" alt="Khon Kaen University Logo" class="logo">
+                    <p href="#">มหาวิทยาลัยขอนแก่น</p>
+                    <p href="#">KHON KAEN UNIVERSITY</p>
+                </div>
+                <!-- Sidebar Navigation -->
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header1">
+                        <i class="fa-solid fa-list pe-2"></i>
+                        <p>รุ่งทิวา แต้อุดมโชค</p>
+                    </li>
+                    <li class="sidebar-item1">
+                        <a href="index.html" class="sidebar-link">
+                            <i class="fa-solid fa-house-chimney pe-2"></i>
+                            หน้าแรก
+                        </a>
+                    </li>
+                    <li class="sidebar-header">
+                        หัวข้อ
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
+                            aria-expanded="false" aria-controls="pages">
+                            <i class="fa-solid fa-pen pe-2"></i>
+                            เมนู
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="com.html" class="sidebar-link">ยื่นคำร้อง</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="com.html" class="sidebar-link">แจ้งปัญหา</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="com.html" class="sidebar-link">ข้อเสนอแนะ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="history.html" class="sidebar-link">
+                            <i class="fas fa-history pe-2"></i>
+                            ประวัติการยื่นคำร้อง
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <!-- Main Component -->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <!-- Button for sidebar toggle -->
+                <button class="btn" type="button" data-bs-theme="dark" onclick="moveLogo()">
+                    <i class="fa-solid fa-bars pe-1"></i>
+                    แจ้งปัญหา
+                </button>
+            </nav>
+
+            <div class="flex-container">
+                <div id="h2-container">
+                    <h2 id="h2">แจ้งปัญหา</h2>
+                </div>
+
+
+                <!--ข้อมูลคำร้อง Compaint-->
+                <form th:action="@{/complaint}" th:object="${complaint}" method="post" onsubmit="return validateForm()">
+                    <div class="card mt-4">
+                        <div class="card-header text-center">
+                            <h5 class="mb-0">ข้อมูลส่วนตัวผู้แจ้งปัญหา</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                                <!-- Type -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="custom-font-size">
+                                            <p>
+                                                <strong>ชื่อ - นามสกุล :</strong> <span
+                                                    th:text="${complaint.complaintType}" />
+                                            </p>
+                                            <p>
+                                                <strong>e-mail :</strong> <span th:text="${complaint.service}" />
+                                            </p>
+                                            <p>
+                                                <strong>สถานะปัจจุบัน :</strong> <span th:text="${complaint.status}" />
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!--กรอกข้อมูลคำร้อง Compaint-->
+                <form>
+                    <div class="card mt-4">
+                        <div class="card-header text-center">
+                            <h5 class="mb-0">รายละเอียดแจ้งปัญหา</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                                <!-- Type -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold" for="type">หัวข้อคำร้อง <span
+                                                    class="text-danger font-weight-bold">*</span></label>
+                                            <select class="custom-select" name="type" id="type"
+                                                th:field="*{complaintType}" required>
+                                                <option selected disabled value=""> กรุณาเลือกหัวข้อคำร้อง </option>
+                                                <option name="1" value="แจ้งข้อร้องเรียน/แจ้งปัญหา">
+                                                    แจ้งข้อร้องเรียน/แจ้งปัญหา </option>
+                                                <option name="2" value="ข้อชื่นชม/ชมเชย">
+                                                    ข้อชื่นชม/ชมเชย </option>
+                                                <option name="3" value="ข้อเสนอแนะ">
+                                                    ข้อเสนอแนะ </option>
+                                                <option name="4" value="อื่น ๆ">
+                                                    อื่น ๆ </option>
+                                                <option name="5" value="การให้ข้อมูล">
+                                                    การให้ข้อมูล </option>
+                                                <option name="6" value="สอบถามข้อมูล">
+                                                    สอบถามข้อมูล </option>
+                                            </select>
+                                            <!-- <div class="invalid-feedback">
+                                                    กรุณาเลือประเภท
+                                                </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End type -->
+
+                                <!-- Date time-->
+                                <!-- <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold" for="birthday">ว/ด/ป:</label>
+                                            <input th:field="*{date}" type="date" id="birthday" name="birthday">
+                                        </div>
+                                    </div> -->
+                                <!-- End of date time-->
+
+                                <!-- Caterogy -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold" for="caterogy"> การบริการ <span
+                                                    class="text-danger font-weight-bold">*</span></label>
+                                            <select class="custom-select" name="caterogy" id="caterogy"
+                                                th:field="*{service}" required>
+                                                <option selected disabled value=""> กรุณาเลือกการบริการ </option>
+                                                <option name="1" value="WIFI/VPN">
+                                                    WIFI/VPN </option>
+                                                <option name="2" value="Email">
+                                                    Email </option>
+                                                <option name="3" value="ไฟล์ดิจิทัล">
+                                                    ไฟล์ดิจิทัล </option>
+                                                <option name="4" value="อื่นๆ">
+                                                    อื่นๆ </option>
+
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                กรุณาเลือหมวดหมู่
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End caterogy -->
+
+
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="detail">รายละเอียด/สถานที่ <span
+                                                class="text-danger font-weight-bold">*</span></label>
+                                        <textarea class="form-control" name="detail" id="detail" rows="5"
+                                            placeholder="โปรดระบุรายละเอียดแบบย่อ ..." th:field="*{detail}"
+                                            required></textarea>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกรายละเอียด
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Files -->
+                                <div class="col-12 mb-3">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold"
+                                            for="files">ไฟล์รูปภาพ/เอกสารประกอบข้อร้องเรียน/ข้อเสนอแนะ
+                                            <small>(ถ้ามี)</small></label>
+
+                                        <div class="file-loading">
+                                            <input type="file" name="files" id="files" th:field="*{file}" class="file"
+                                                data-browse-on-zone-click="true">
+                                        </div>
+                                        <small class="small-text">*เฉพาะไฟล์ gif, jpeg, png, jpg, doc, docx, xls, xlsx,
+                                            pdf, ppt, pptx, txt, csv</small>
+                                    </div>
+                                </div>
+                                <!-- End files -->
+
+                                <!-- Location -->
+                                <!-- <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold" >สถานที่: </label>
+                                            <input th:field="*{location}" type="lacation" id="lacation" name="lacation">
+                                        </div>
+                                    </div> -->
+
+                                <!-- Radio -->
+                                <div class="col-md-6 mt-2 mb-3">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">ยินยอมให้เผยแพร่ข้อมูลต่อสาธารณะหรือไม่ ? <span
+                                                class="text-danger font-weight-bold">*</span></label>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="custom-control-input" type="radio" name="radio" id="disagree"
+                                                value="1" required>
+                                            <label class="custom-control-label pointer"
+                                                for="disagree">ไม่ยินยอมให้เผยแพร่</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="custom-control-input" type="radio" name="radio" id="agree"
+                                                value="2" required>
+                                            <label class="custom-control-label pointer"
+                                                for="agree">ยินยอมให้เผยแพร่</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End radio -->
+
+                                <div class="col-12">
+                                    <p class="text-secondary">
+                                        <i
+                                            class="fas fa-exclamation-circle mr-5 pe-2"></i>โปรดตรวจสอบข้อมูลทั้งหมดก่อนยืนยันข้อร้องเรียน
+                                        เพื่อความรวดเร็วและประโยชน์ในการดำเนินการแก้ไขข้อร้องเรียนดังกล่าว
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="reset" class="btn btn-custom btn-secondary mr-2">
+                            <i class="fas fa-redo pe-2"></i>รีเซ็ต
+                        </button>
+                        <button type="button" class="btn btn-custom btn-green ml-2 submit"
+                            onclick="validateForm(event)">
+                            <i class="fas fa-check pe-2"></i>ยืนยัน
+                        </button>
+                    </div>
+                </form>
+
+                <!--End กรอกข้อมูลคำร้อง Compaint-->
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script>
+        const toggler = document.querySelector(".btn");
+        toggler.addEventListener("click", function () {
+            document.querySelector("#sidebar").classList.toggle("collapsed");
+        });
+    </script>
+</body>
+
+</html>

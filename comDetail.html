@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css_comDetail.css">
+    <title>KHON KAEN UNIVERSITY</title>
+
+    <script>
+        function moveLogo() {
+            var logo = document.querySelector('.sidebar-logo img');
+            var sidebarLogo = document.querySelector('.sidebar-logo');
+            if (logo.classList.contains('moved')) {
+                sidebarLogo.insertBefore(logo, sidebarLogo.firstChild);
+                logo.classList.remove('moved');
+            } else {
+                sidebarLogo.appendChild(logo);
+                logo.classList.add('moved');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+                const messageIcon1 = document.querySelector('#message1');
+                const messageIcon2 = document.querySelector('#message2');
+                const filterDiv1 = document.querySelector('.filter');
+                const filterDiv2 = document.querySelector('.filter2');
+
+                messageIcon1.addEventListener('click', function () {
+                    filterDiv1.classList.toggle('slide-down');
+                });
+
+                messageIcon2.addEventListener('click', function () {
+                    filterDiv2.classList.toggle('slide-down');
+                });
+            });
+    </script>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <img src="Logokku.png" alt="Khon Kaen University Logo" class="logo">
+                    <p href="#">มหาวิทยาลัยขอนแก่น</p>
+                    <p href="#">KHON KAEN UNIVERSITY</p>
+                </div>
+                <!-- Sidebar Navigation -->
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header1">
+                        <i class="fa-solid fa-list pe-2"></i>
+                        <p>รุ่งทิวา แต้อุดมโชค</p>
+                    </li>
+                    <li class="sidebar-item1">
+                        <a href="index.html" class="sidebar-link">
+                            <i class="fa-solid fa-house-chimney pe-2"></i>
+                            หน้าแรก
+                        </a>
+                    </li>
+                    <li class="sidebar-header">
+                        หัวข้อ
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
+                            aria-expanded="false" aria-controls="pages">
+                            <i class="fa-solid fa-pen pe-2"></i>
+                            เมนู
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">ยื่นคำร้อง</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">แจ้งปัญหา</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">ข้อเสนอแนะ</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fas fa-history pe-2"></i>
+                            ประวัติการยื่นคำร้อง
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+        
+        <!-- Main Component -->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <!-- Button for sidebar toggle -->
+                <button class="btn" type="button" data-bs-theme="dark" onclick="moveLogo()">
+                    <i class="fa-solid fa-bars"></i>
+                    รายละเอียด
+                </button>
+            </nav>
+            <!-- ตัวเพิ่มคอมเม้นสำนัก1 ถ้าเพิ่มต้องแก้ javascript -->
+            <div class="sidebar-right">
+                <div class="sidebar-nav2" id="sidebar-nav1">
+                    <h2>สถานะการดำเนินงาน</h2>
+                    <h3>แผนกดิจิทัล <i class="fa-solid fa-message" id="message1"></i>
+                        <i class="fa-solid fa-circle-check" style="color: green;"></i>
+                    </h3>
+                    <!-- เพิ่มสำนักอื่น ๆ ตามต้องการ -->
+                </div>
+                <!-- เพิ่มกรองใส่ข้อความ -->
+                <div class="filter">
+                    <p>ผู้รับผิดชอบ : </p>
+                    <p>เวลา : </p>
+                    <div class="greeting-box">
+                        ยินดีต้อนรับ!
+                    </div>
+                </div>
+                
+                <!-- ตัวเพิ่มคอมเม้นสำนักที่2 -->
+                <div class="sidebar-nav2" id="sidebar-nav1">
+                    <h3>ช่างซ่อม <i class="fa-solid fa-message" id="message2"></i>
+                        <i class="fa-solid fa-circle-check" style="color: green;"></i>
+                    </h3>
+                    <!-- เพิ่มสำนักอื่น ๆ ตามต้องการ -->
+                </div>
+                <!-- เพิ่มกรองใส่ข้อความ -->
+                <div class="filter2">
+                    <p>ผู้รับผิดชอบ : </p>
+                    <p>เวลา : </p>
+                    <div class="greeting-box2">
+                        ลาก่อน
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <form>
+                <div class="card mt-4">
+                    <div class="card-header text-center">
+                        <h5 class="mb-0">ข้อมูลส่วนตัวผู้แจ้งปัญหา</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <!-- Type -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="custom-font-size">
+                                        <p>
+                                            <strong>ชื่อ - นามสกุล :</strong> <span
+                                                th:text="${complaint.complaintType}" />
+                                        </p>
+                                        <p>
+                                            <strong>e-mail :</strong> <span th:text="${complaint.service}" />
+                                        </p>
+                                        <p>
+                                            <strong>สถานะปัจจุบัน :</strong> <span th:text="${complaint.status}" />
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form>
+                <div class="card mt-4">
+                    <div class="card-header text-center">
+                        <h5 class="mb-0">มีความประสงค์แจ้งปัญหาดังนี้</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <!-- Type -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="custom-font-size">
+                                        <p>
+                                            <strong>หัวข้อคำร้อง :</strong> <span
+                                                th:text="${complaint.complaintType}" />
+                                        </p>
+                                        <p>
+                                            <strong>การบริการ :</strong> <span th:text="${complaint.service}" />
+                                        </p>
+                                        <p>
+                                            <strong>รายละเอียด :</strong> <span th:text="${complaint.detail}" />
+                                        </p>
+                                        <p>
+                                            <strong>ไฟล์ :</strong> <span th:text="${complaint.file}" />
+                                        </p>
+                                        <p>
+                                            <strong>สถานะ :</strong> <span th:text="${complaint.status}" />
+                                        </p>
+                                        <p>
+                                            <strong>คำอธิบาย :</strong> <span th:text="${complaint.comment}" />
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="bootstrap-sidebar/script.js"></script>
+</body>
+
+
+</html>

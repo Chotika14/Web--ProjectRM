@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.navbar {
+    background-color: rgba(167, 59, 36, 1);
+    border-bottom: 1px solid #000000; /* เพิ่มเส้นกรอบด้านล่าง */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 3); /* เพิ่มเงา */
+}
+.navbar button {
+    color: white;
+}
+.navbar button:hover {
+    color: white;
+}
+h3 {
+    font-size: 1.2375rem;
+    color: #FFF;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+/* ตำแหน่ง ber */
+.wrapper { 
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+    background-color: rgba(168, 168, 168, 0.807);
+    
+}
+
+/* แถบเมนู */
+#sidebar { 
+    max-width: 264px;
+    min-width: 264px;
+    transition: all 0.35s ease-in-out;
+    z-index: 1111;
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid #000000; /* เพิ่มเส้นกรอบด้านซ้าย */
+}
+
+/* Sidebar collapse ตัวไลด์ */
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #e9ecef;
+    position: relative;
+    display: block;
+    font-size: 1rem;
+    padding-left: -20px;
+}
+
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+/* ตัว main */
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+.sidebar-logo {
+    padding: 1.15rem 1.5rem;
+    display: flex;
+    flex-direction: column-reverse; /* เรียง p1 และ p2 ลงมาในทิศตรงกันข้าม */
+    align-items: center; /* จัดให้แนวตั้งขององค์ประกอบอยู่ตรงกลาง */
+    position: relative; /* ต้องเพิ่มบรรทัดนี้เพื่อกำหนดตำแหน่งของโลโก้ */
+}
+.logo {
+    width: 30px; /* ปรับขนาดความกว้างของภาพ */
+    height: auto; /* ปรับขนาดความสูงของภาพให้สัดส่วนตามกว้าง */
+    position: absolute; /* ให้โลโก้อยู่ในตำแหน่งอิสระภายใน .sidebar-logo */
+    top: 50%; /* จัดให้โลโก้อยู่ตรงกลางตามแนวดิ่ง */
+    left: 20px; /* ขยับโลโก้ไปทางด้านซ้ายเล็กน้อย */
+    transform: translateY(-50%); /* ขยับโลโก้ตามแนวดิ่งเพื่อจัดให้อยู่ตรงกลาง */
+}
+
+
+.sidebar-logo p {
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 5px 5px; /* ระยะห่างระหว่าง p1 และ p2 */
+}
+
+
+.sidebar-nav {
+    padding: 0;
+}
+
+.sidebar-header1 {
+    color: #000000;
+    font-size: .8rem;
+    display: flex;
+    align-items: center; /* จัดให้องค์ประกอบแนวตั้งตรงกลาง */
+    padding: 2rem 3.5rem .7rem;
+}
+
+.sidebar-header1 p {
+    display: block; /* ทำให้ <p> เป็นบล็อก */
+    margin-bottom: 5px; /* ระยะห่างด้านล่างของ <p> */
+}
+.sidebar-item1{
+    color: #000000;
+    font-size: .75rem;
+    padding: 1.5rem .10rem;
+}
+
+.sidebar-header {
+    color: #000000;
+    font-size: .75rem;
+    padding: .1rem 1.5rem .10rem;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #000000;
+    position: relative;
+    display: block;
+    font-size: 1rem;
+}
+
+a.sidebar-link:hover {
+    color: #6d6d6d;
+}
+
+.main .content { /* ข้อความแสดงความยินดี */
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* เปลี่ยนสีพื้นหลังตามที่ต้องการ */
+    padding: 20px; /* เพิ่ม padding ตามต้องการ */
+    width: 100%;
+    height: 25vh;
+    border-bottom: 1px solid #3f3f3f; /* เพิ่มเส้นกรอบด้านล่าง */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 3); /* เพิ่มเงา */
+    
+}
+.main .content .mb-3 {
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบนเป็น 20px */
+}
+/* container p */
+.main .content p1 {
+    font-size: 10px;
+    margin-top: 35px;
+}
+
+.main .content p2 {
+    font-size: 10px;
+    margin-top: 2px;
+}
+.main .content p3{
+    font-size: 30px;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* ปุ่มบวก */
+.flex-container {
+    margin-top: 17px; /* ลดระยะห่างระหว่าง .flex-container กับ .content */
+}
+
+.flex-container button {
+    background-color: rgba(167, 59, 36, 1);
+    color: white;
+    border: none;
+    width: 110px;
+    height: 35px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px; /* เพิ่มระยะห่างรอบปุ่ม */
+}
+
+.table th{
+    text-align: center;
+    vertical-align: middle;
+    border: none; /* ลบเส้นกรอบ */
+    border-bottom: 1px solid #000;
+    font-size:15px;
+}
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    border: none; /* ลบเส้นกรอบ */
+    border-bottom: 1px solid #000; /* เพิ่มเส้นกรอบนอนระหว่างเซลล์ */
+    font-size:13px;
+}
+    
+/* ส่วนของตาราง */
+.table {
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 15px; /* ระยะห่างด้านบนของตาราง */
+    border-radius: 5px; /* มุมโค้งขอบตาราง */
+    width: 97%;
+    margin-left: auto; /* จัดตำแหน่งตารางตรงกลาง */
+    margin-right: auto; /* จัดตำแหน่งตารางตรงกลาง */
+    border-collapse: separate; /* ให้เซลล์แยกกัน */
+    border-spacing: 0px 10px; /* กำหนดระยะห่างระหว่างเซลล์ทางแนวนอนเท่ากับ 10px */
+
+}
+
+/* เส้นแนวนอนระหว่างเซลล์ */
+.table tr td {
+    border-bottom: 1px solid #000; /* เพิ่มเส้นกรอบนอนระหว่างเซลล์ */
+}
+
+#h2 {
+    font-size: 15px; /* ขนาดตัวอักษร */
+    color: #333; /* สีข้อความ */
+    margin-left: 20px; /* เพิ่มระยะห่างทางซ้าย */
+    padding-bottom: 0px; /* การเพิ่มระยะห่างด้านล่างของข้อความ */
+}
+
+
+
+
+/* Responsive */
+
+@media (min-width:768px) {
+    .content {
+        width: auto;
+    }
+}
+
+
+

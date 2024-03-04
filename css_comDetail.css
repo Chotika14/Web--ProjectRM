@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(167, 59, 36, 1);
+    border-bottom: 1px solid #000000;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 3);
+}
+
+.navbar button {
+    color: white;
+}
+
+.navbar button:hover {
+    color: white;
+}
+
+/* Sidebar Right Styles */
+.sidebar-right {
+    background-color: #fff;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 35px;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.sidebar-right h2{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.sidebar-right h3{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.sidebar-nav2 h3 {
+    display: flex;
+    justify-content: space-between; /* จัดตำแหน่งของไอคอนให้อยู่ระหว่างสองข้อความ */
+}
+.sidebar-nav2 h3 i {
+    margin-right: 15px; /* เพิ่มระยะห่างระหว่างไอคอนและไอคอนทางขวา */
+}
+.sidebar-nav2 h3 i.fa-message {
+    margin-left: auto; /* ขยับไอคอน fa-message ไปทางขวาโดยให้มีระยะห่างจากขอบซ้ายของคอลัมน์ */
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่างไอคอนและไอคอนทางขวา */
+}
+
+
+
+
+
+/* ตัวสไลด์กล่องคอมเม้น */
+.filter {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.filter p {
+    font-size: 13px;
+    line-height: 1; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+
+.slide-down {
+    max-height: 170px; /* ปรับความสูงตามความเหมาะสม */
+}
+
+.greeting-box {
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    border: 1px solid #000000; /* เส้นกรอบสีดำ */
+    padding: 10px;
+    width: 260px;
+    height: auto;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+.fa-message:hover {
+    color: rgb(120, 120, 120); /* เปลี่ยนสีเป็นเขียวเมื่อมีการชี้ */
+    cursor: pointer;
+}
+
+.filter2 {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.filter2 p {
+    font-size: 13px;
+    line-height: 1; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+
+.slide-down {
+    max-height: 170px; /* ปรับความสูงตามความเหมาะสม */
+}
+
+.greeting-box2 {
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    border: 1px solid #000000; /* เส้นกรอบสีดำ */
+    padding: 10px;
+    width: 260px;
+    height: auto;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* --------------- */
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* ตำแหน่ง ber */
+.wrapper { 
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+    background-color: rgba(187, 187, 187, 0.807);
+    
+}
+
+/* แถบเมนู */
+#sidebar { 
+    max-width: 264px;
+    min-width: 264px;
+    transition: all 0.35s ease-in-out;
+    z-index: 1111;
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid #000000; /* เพิ่มเส้นกรอบด้านซ้าย */
+}
+
+/* Sidebar collapse ตัวไลด์ */
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #e9ecef;
+    position: relative;
+    display: block;
+    font-size: 1rem;
+    padding-left: -20px;
+}
+
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+/* ตัว main */
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+.sidebar-logo {
+    padding: 1.15rem 1.5rem;
+    display: flex;
+    flex-direction: column-reverse; /* เรียง p1 และ p2 ลงมาในทิศตรงกันข้าม */
+    align-items: center; /* จัดให้แนวตั้งขององค์ประกอบอยู่ตรงกลาง */
+    position: relative; /* ต้องเพิ่มบรรทัดนี้เพื่อกำหนดตำแหน่งของโลโก้ */
+}
+.logo {
+    width: 30px; /* ปรับขนาดความกว้างของภาพ */
+    height: auto; /* ปรับขนาดความสูงของภาพให้สัดส่วนตามกว้าง */
+    position: absolute; /* ให้โลโก้อยู่ในตำแหน่งอิสระภายใน .sidebar-logo */
+    top: 50%; /* จัดให้โลโก้อยู่ตรงกลางตามแนวดิ่ง */
+    left: 20px; /* ขยับโลโก้ไปทางด้านซ้ายเล็กน้อย */
+    transform: translateY(-50%); /* ขยับโลโก้ตามแนวดิ่งเพื่อจัดให้อยู่ตรงกลาง */
+}
+
+
+.sidebar-logo p {
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 5px 5px; /* ระยะห่างระหว่าง p1 และ p2 */
+}
+
+
+.sidebar-nav {
+    padding: 0;
+}
+
+.sidebar-header1 {
+    color: #000000;
+    font-size: .8rem;
+    display: flex;
+    align-items: center; /* จัดให้องค์ประกอบแนวตั้งตรงกลาง */
+    padding: 2rem 3.5rem .7rem;
+}
+
+.sidebar-header1 p {
+    display: block; /* ทำให้ <p> เป็นบล็อก */
+    margin-bottom: 5px; /* ระยะห่างด้านล่างของ <p> */
+}
+.sidebar-item1{
+    color: #000000;
+    font-size: .75rem;
+    padding: 1.5rem .10rem;
+}
+
+.sidebar-header {
+    color: #000000;
+    font-size: .75rem;
+    padding: .1rem 1.5rem .10rem;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #000000;
+    position: relative;
+    display: block;
+    font-size: 1rem;
+}
+
+a.sidebar-link:hover {
+    color: #6d6d6d;
+}
+
+form {
+    width: 950px;
+    height: auto;
+    padding-left: 20px;
+}
+
+/* การจัดขนาดของกรอบ card ตัวคุมใหญ่ */
+.card {
+    max-width: 1200px; /* กำหนดขนาดของ card */
+    margin: auto; /* จัดให้ card อยู่ตรงกลางของหน้าจอ */
+    border: 1px solid #414141; /* เส้นขอบของ card */
+    border-radius: 10px; /* รอบขอบของ card */
+}
+
+/* ประกอบภายใน card-body */
+.card-body {
+    padding: 30px; /* ระยะห่างภายใน card */
+    
+}
+
+.card-header{
+    background-color: rgba(167, 59, 36, 1);
+}
+
+/* การจัดขนาดของข้อความใน card */
+.card-header h5 {
+    color: #ffffff;
+    font-size: 17px; /* ขนาดของข้อความใน card-header */
+}
+
+
+/*form-group*/
+.form-group {
+    margin-bottom: 15px; /* ระยะห่างด้านล่างของ form-group */
+    font-size: 13px;
+}
+
+
+/* Responsive */
+
+@media (min-width:768px) {
+    .content {
+        width: auto;
+    }
+}
+
+
+

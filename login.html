@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register Page</title>
+    <link rel="stylesheet" href="css_login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div id="login-box">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Name:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" id="register-link">Register here</a>.</p>
+                </form>
+            </div>
+
+            <div id="register-box" style="display:none;">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="reg-username">Name:</label>
+                        <input type="text" id="reg-username" name="reg-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email:</label>
+                        <input type="email" id="reg-email" name="reg-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password:</label>
+                        <input type="password" id="reg-password" name="reg-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Status">Status:</label>
+                        <select id="Status" name="Status">
+                            <option value="s1">นักศึกษา</option>
+                            <option value="s2">บุคลากร</option>
+                            <option value="s3">ศิษย์เก่า</option>
+                            <option value="s4">อื่นๆ</option>
+                        </select>
+                    </div>
+            
+                    <button type="submit">Register</button>
+                    <p>Already have an account? <a href="#" id="login-link">Login here</a>.</p>
+                </form>
+            </div>            
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('register-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('login-box').style.display = 'none';
+                document.getElementById('register-box').style.display = 'block';
+            });
+
+            document.getElementById('login-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('register-box').style.display = 'none';
+                document.getElementById('login-box').style.display = 'block';
+            });
+
+            document.getElementById('login-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // เขียนโค้ดสำหรับการตรวจสอบข้อมูลการเข้าสู่ระบบและดำเนินการต่อตามที่ต้องการที่นี่
+                alert('Login button clicked!');
+            });
+
+            document.getElementById('register-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // เขียนโค้ดสำหรับการลงทะเบียนผู้ใช้และดำเนินการต่อตามที่ต้องการที่นี่
+                alert('Register button clicked!');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

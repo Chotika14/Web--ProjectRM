@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+/* ตัว body */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* ber ด้านบน*/
+.navbar {
+    background-color: rgba(167, 59, 36, 1);
+    border-bottom: 1px solid #000000; /* เพิ่มเส้นกรอบด้านล่าง */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 3); /* เพิ่มเงา */
+}
+
+/* ber ด้านบน button */
+.navbar button {
+    color: white;
+}
+/* ber ด้านบน button hover */
+.navbar button:hover {
+    color: white;
+}
+
+/* container h3 */
+.container h3 {
+    font-size: 1.2375rem;
+    color: #c62f2f;
+}
+
+/* a เมนู */
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* li เมนู */
+li {
+    list-style: none;
+}
+
+/* ตำแหน่ง ber */
+.wrapper { 
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+    background-color: rgb(151, 151, 151); /* สีพื้นหลัง */
+}
+
+/* แถบเมนู */
+#sidebar { 
+    max-width: 264px;
+    min-width: 264px;
+    transition: all 0.35s ease-in-out;
+    z-index: 1111;
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid #000000; /* เพิ่มเส้นกรอบด้านซ้าย */
+}
+
+/* id Sidebar collapse ด็อปลิส */
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+/* a sidebar-link  ส่วนของตัว "เมนู" */
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #e9ecef;
+    position: relative;
+    display: block;
+    font-size: 1rem;
+    padding-left: -20px;
+}
+
+/* a sidebar-link น่าจะตัวลูกเล่น */
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+/* a sidebar-link น่าจะตัวลูกเล่น */
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+/* ตัว main */
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+/* ตัว sidebar-logo */
+.sidebar-logo {
+    padding: 1.15rem 1.5rem;
+    display: flex;
+    flex-direction: column-reverse; /* เรียง p1 และ p2 ลงมาในทิศตรงกันข้าม */
+    align-items: center; /* จัดให้แนวตั้งขององค์ประกอบอยู่ตรงกลาง */
+    position: relative; /* ต้องเพิ่มบรรทัดนี้เพื่อกำหนดตำแหน่งของโลโก้ */
+}
+.logo {
+    width: 30px; /* ปรับขนาดความกว้างของภาพ */
+    height: auto; /* ปรับขนาดความสูงของภาพให้สัดส่วนตามกว้าง */
+    position: absolute; /* ให้โลโก้อยู่ในตำแหน่งอิสระภายใน .sidebar-logo */
+    top: 50%; /* จัดให้โลโก้อยู่ตรงกลางตามแนวดิ่ง */
+    left: 20px; /* ขยับโลโก้ไปทางด้านซ้ายเล็กน้อย */
+    transform: translateY(-50%); /* ขยับโลโก้ตามแนวดิ่งเพื่อจัดให้อยู่ตรงกลาง */
+}
+
+/* ตัว sidebar-logo p */
+.sidebar-logo p {
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 5px 5px; /* ระยะห่างระหว่าง p1 และ p2 */
+}
+
+/* ตัวเมนู */
+.sidebar-nav {
+    padding: 0;
+}
+
+/* ตัวเมนู class="sidebar-header1" */
+.sidebar-header1 {
+    color: #000000;
+    font-size: .8rem;
+    display: flex;
+    align-items: center; /* จัดให้องค์ประกอบแนวตั้งตรงกลาง */
+    padding: 2rem 3.5rem .7rem;
+}
+
+/* ตัวเมนู class="sidebar-header1" ชื่อผู้ใช้  */
+.sidebar-header1 p {
+    display: block; /* ทำให้ <p> เป็นบล็อก */
+    margin-bottom: 5px; /* ระยะห่างด้านล่างของ <p> */
+}
+
+/* ตัวเมนู sidebar-item1 */
+.sidebar-item1{
+    color: #000000;
+    font-size: .75rem;
+    padding: 1.5rem .10rem;
+}
+
+/* ตัว "หัวข้อ" */
+.sidebar-header {
+    color: #000000;
+    font-size: .75rem;
+    padding: .1rem 1.5rem .10rem;
+}
+/* ตัว "หัวข้อ" เมนู */
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #000000;
+    position: relative;
+    display: block;
+    font-size: 1rem;
+}
+/* ตัว "หัวข้อ" หน้าแรก*/
+a.sidebar-link:hover {
+    color:rgb(148, 148, 148);
+}
+
+/* ระยะห่าง */
+.flex-container {
+    margin-top: 30px; /* ลดระยะห่างระหว่าง .flex-container กับ .content */
+}
+
+#h2 {
+    font-size: 25px; /* ขนาดตัวอักษร */
+    color: #000000; /* สีข้อความ */
+    text-align: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+    position: relative; /* ตั้งค่าตำแหน่งเป็นแบบสัมพันธ์ */
+    padding-bottom: 10px; /* เพิ่มระยะห่างด้านล่างของข้อความ */
+}
+
+#h2::after {
+    content: "";
+    position: absolute; /* ตั้งค่าตำแหน่งเป็นแบบสัมพันธ์ */
+    left: 30%; /* จัดให้อยู่ที่ด้านซ้ายสุด */
+    bottom: 0; /* จัดให้อยู่ที่ด้านล่างสุด */
+    width: 40%; /* กว้างเท่ากับความกว้างขององค์ประกอบที่มันอยู่ภายใน */
+    border-bottom: 2px solid #cd0909; /* เส้นใต้ที่มีความหนา 4px */
+}
+
+.custom-font-size p {
+    font-size: 14px; /* ตั้งค่าขนาดอักษรเป็น 18px */
+    font-weight: lighter; /* กำหนดให้เป็นตัวหนาน้อยลง */
+}
+
+
+/* การจัดขนาดของกรอบ card ตัวคุมใหญ่ */
+.card {
+    max-width: 1200px; /* กำหนดขนาดของ card */
+    margin: auto; /* จัดให้ card อยู่ตรงกลางของหน้าจอ */
+    border: 1px solid #414141; /* เส้นขอบของ card */
+    border-radius: 10px; /* รอบขอบของ card */
+}
+
+/* ประกอบภายใน card-body */
+.card-body {
+    padding: 30px; /* ระยะห่างภายใน card */
+}
+
+.card-header{
+    background-color: rgba(167, 59, 36, 1);
+}
+
+/* การจัดขนาดของข้อความใน card */
+.card-header h5 {
+    color: #ffffff;
+    font-size: 17px; /* ขนาดของข้อความใน card-header */
+}
+
+/* ปุ่มด้านล่าง */
+.btn-custom {
+    padding: 10px 20px; /* ขนาดของปุ่ม */
+    border-radius: 5px; /* รอบขอบของปุ่ม */
+    font-size: 16px; /* ขนาดของตัวอักษรของปุ่ม */
+}
+/*form-group*/
+.form-group {
+    margin-bottom: 15px; /* ระยะห่างด้านล่างของ form-group */
+}
+
+
+
+/*custom-select ตัวเลือกรายการ*/
+.custom-select {
+    margin-top: 10px; /* ระยะห่างด้านบนของ custom-select */
+    appearance: none;  /*เอาลักษณะเดิมของเลือกออก */
+    -webkit-appearance: none; /* เอาลักษณะเดิมของเลือกออก (สำหรับ Safari) */
+    -moz-appearance: none; /* เอาลักษณะเดิมของเลือกออก (สำหรับ Firefox) */
+    background-color: transparent; /* กำหนดสีพื้นหลังเป็นโปร่งใส */
+    background-image: url('icon/down-arrow.png'); /* เพิ่มไอคอนลูกศร */
+    background-repeat: no-repeat; /* ไม่ให้รูปภาพทำซ้ำ */
+    background-position: right 10px center; /* จัดตำแหน่งของไอคอนลูกศร */
+    background-size: 10px; /* กำหนดขนาดของไอคอน */
+    padding-right: 40px; /* เพิ่มช่องว่างด้านขวา */
+    border-radius: 5px; /* กำหนดรัศมีของมุม */
+    border: 1px solid #ced4da; /* กำหนดเส้นขอบ */
+    height: 40px; /* กำหนดความสูง */
+    width: 50%; /* กำหนดความกว้างเต็มรูปแบบ */
+    font-size: 14px; /* กำหนดขนาดของตัวอักษร */
+}
+
+.custom-select:focus {
+    outline: none; /* ไม่ให้มีเส้นโค้งสีน้ำเงินเมื่อไฟล์ได้รับการเลือก */
+    border-color: #2a2b2b; /* กำหนดสีของเส้นขอบเมื่อไฟล์ได้รับการเลือก */
+    box-shadow: 0 0 0 0.2rem rgba(51, 52, 52, 0.25); /* เพิ่มเงาเมื่อไฟล์ได้รับการเลือก */
+}
+
+
+/* form-control รายละเอียด */
+.form-control  {
+    font-size: 14px; /* ขนาดของตัวอักษรในอินพุท */
+    border-radius: 5px; /* รอบขอบของอินพุท */
+    border: 1px solid #ced4da; /* เส้นขอบของอินพุท */
+}
+
+.small-text {
+    font-size: 12px; /* กำหนดขนาด font สำหรับตัวหนา */
+    color: red; /* กำหนดสีข้อความเป็นสีแดง */
+
+}
+
+
+/* ตัวยินยอม */
+.font-weight-bold {
+    font-size: 15px; /* กำหนดขนาด font สำหรับตัวหนา */
+}
+
+.custom-control-label {
+    font-size: 13px; /* กำหนดขนาด font สำหรับ label */
+}
+
+.pointer {
+    cursor: pointer; /* เพิ่ม cursor เป็น pointer เมื่อนำเม้าส์ไปชี้ */
+}
+
+/* การจัดหน้าต่างของปุ่ม */
+.d-flex {
+    flex-direction: column; /* การจัดแสดงปุ่มเป็นแนวตั้ง */
+    align-items: center; /* จัดให้ปุ่มอยู่กึ่งกลาง */
+}
+
+/* การจัดระยะห่างของปุ่ม */
+.my-4 {
+    margin-top: 20px; /* ระยะห่างด้านบนของปุ่ม */
+    margin-bottom: 20px; /* ระยะห่างด้านล่างของปุ่ม */
+}
+
+/* การจัดขนาดของ icon */
+i {
+    font-size: 15px; /* ขนาดของ icon */
+}
+
+
+
+/* การจัดหน้าต่างของข้อความเพิ่มเติม */
+.text-secondary {
+    font-size: 10px; /* ขนาดของข้อความเพิ่มเติม */
+    
+}
+
+
+/* ปุ่ม */
+.button-container {
+    display: flex; /* แสดงเป็น Flexbox */
+    justify-content: center; /* จัดเรียงเนื้อหาให้อยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดเรียงเนื้อหาให้อยู่ตรงกลางแนวตั้ง */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.btn-custom {
+    padding: 10px 20px; /* ขนาดของ padding */
+    font-size: 16px; /* ขนาดของตัวอักษร */
+    border-radius: 5px; /* รัศมีของมุม */
+    border: none; /* ไม่มีเส้นขอบ */
+    cursor: pointer; /* เปลี่ยนเคอเซอร์เป็น cursor เมื่อเหมาะสม */
+}
+
+.btn-custom:last-child {
+    margin-left: 10px; /* ระยะห่างด้านซ้ายสุดของปุ่มสุดท้าย */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* สีพื้นหลัง */
+    color: white; /* สีข้อความ */
+}
+
+.btn-green {
+    background-color: #138b1f; /* สีพื้นหลัง */
+    color: white; /* สีข้อความ */
+}
+
+.btn-custom:hover {
+    color: #000000;
+    opacity: 0.8; /* ทำให้ปุ่มเป็นอิสระต่อการนำเม้าส์ไปชี้ */
+}
+
+
+
+/* 
+.form-group input[type="text"] {
+    width: 30%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+} */
+
+
+
+
+/* Responsive */
+@media (min-width:768px) {
+    .content {
+        width: auto;
+    }
+}
+
+
+
