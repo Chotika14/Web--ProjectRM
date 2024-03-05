@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="admin_status_css.css">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="top-bar"></div> <!-- กรอบสีเหลี่ยมอยู่ที่นี่ -->
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <img src="Logokku.png" alt="Khon Kaen University Logo" class="logo">
+                    <p href="#">มหาวิทยาลัยขอนแก่น</p>
+                    <p href="#">KHON KAEN UNIVERSITY</p>
+                </div>
+                <!-- Sidebar Navigation -->
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header1">
+                        <i class="fa-solid fa-list pe-2"></i> 
+                        <p>รุ่งทิวา แต้อุดมโชค</p>
+                    </li>
+                    <li class="sidebar-item1">
+                        <a href="index.html" class="sidebar-link">
+                            <i class="fa-solid fa-house-chimney pe-2"></i>
+                            หน้าแรก
+                        </a>
+                    </li>
+                    <li class="sidebar-header">
+                        หัวข้อ
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#.html" class="sidebar-link">
+                            <i class="fa-solid fa-file-lines pe-2"></i>
+                            รายการที่กำลังดำเนินการ
+                        </a>
+                    </li> 
+                    <li class="sidebar-item">
+                        <a href="#.html" class="sidebar-link">
+                            <i class="fa-solid fa-file-lines pe-2"></i>
+                            รายการที่รอส่วนอื่น
+                        </a>
+                    </li> 
+                    <li class="sidebar-item">
+                        <a href="#.html" class="sidebar-link">
+                            <i class="fa-solid fa-file-lines pe-2"></i>
+                            รายการที่ดำเนินการเสร็จสิ้น
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#.html" class="sidebar-link">
+                            <i class="fa-solid fa-file-lines pe-2"></i>
+                            รายการที่ปฏิเสธ
+                        </a>
+                    </li>
+                    <li class="sidebar-header">
+                        แก้ไขฟอร์ม
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#.html" class="sidebar-link">
+                            <i class="fa-solid fa-gear pe-2"></i>
+                            รายการสถานภาพ
+                        </a>
+                    </li> 
+                    <li class="sidebar-item">
+                        <a href="#.html" class="sidebar-link">
+                            <i class="fa-solid fa-gear pe-2"></i>
+                            รายการประเภท
+                        </a>
+                    </li>  
+                    <li class="sidebar-item">
+                        <a href="#.html" class="sidebar-link">
+                            <i class="fa-solid fa-gear pe-2"></i>
+                            รายการหมวดหมู่
+                        </a>
+                    </li> 
+                </ul>
+            </div>
+        </aside>
+        <!-- Main Component -->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <!-- Button for sidebar toggle -->
+                <button class="btn" type="button" data-bs-theme="dark"> <!-- onclick="moveLogo()" -->
+                    <i class="fa-solid fa-bars"></i>
+                        หน้าแรก
+                </button>
+            </nav>
+            <form>
+                <div class="card mt-4">
+                    <div class="card-header text-center">
+                        <h5 class="mb-0">รายการสถานภาพ</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <label for="input1" class="form-label">ข้อมูล 1</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="input1" placeholder="กรอกข้อมูล 1">
+                                </div>
+                                <div class="mt-2" id="submitBtn">
+                                    <button class="btn btn-primary" type="button">ยืนยัน</button>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-md-6">
+                                <label for="input2" class="form-label">ข้อมูล 2</label>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>หัวข้อคอลัมน์</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ข้อมูล 1.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ข้อมูล 2.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ข้อมูล 3.1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+        <script>
+            const toggler = document.querySelector(".btn");
+            toggler.addEventListener("click", function () {
+                document.querySelector("#sidebar").classList.toggle("collapsed");
+            });
+
+            // sticky-bottom
+                window.onscroll = function () { stickyBtn() };
+
+                function stickyBtn() {
+                    var btn = document.getElementById("submitBtn");
+                    if (window.pageYOffset > btn.offsetTop) {
+                        btn.classList.add("sticky-bottom");
+                    } else {
+                        btn.classList.remove("sticky-bottom");
+                    }
+                }
+
+        </script>
+        
+</body>
+
+
+</html>

@@ -9,7 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="ofdetail_css.css">
-    <title>off</title>
+    <title>officer</title>
+
 </head>
 
 <body>
@@ -41,16 +42,16 @@
                         <a href="#" class="sidebar-link">
                             <i class="fa-solid fa-inbox pe-2"></i>
                             สิ่งที่ต้องดำเนินการ
-                            <p>11</p>   
+                            <p>11</p>
                             <!-- p คือจำนวนคำร้อง -->
                         </a>
-        
+
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
                             <i class="fas fa-history pe-2"></i>
                             อยู่ระหว่างดำเนินการในส่วนอื่น
-                            <p>5</p> 
+                            <p>5</p>
                             <!-- p คือจำนวนคำร้อง -->
                         </a>
                     </li>
@@ -58,7 +59,7 @@
                         <a href="#" class="sidebar-link">
                             <i class="fa-solid fa-check pe-2"></i>
                             ดำเนินการเสร็จสิ้น
-                            <p>20</p> 
+                            <p>20</p>
                             <!-- p คือจำนวนคำร้อง -->
                         </a>
                     </li>
@@ -66,39 +67,39 @@
             </div>
         </aside>
 
-
         <!-- Main Component -->
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom">
                 <!-- Button for sidebar toggle -->
                 <button class="btn" type="button" data-bs-theme="dark" onclick="moveLogo()">
                     <i class="fa-solid fa-bars"></i>
-                    หน้าแรก
+                    สิ่งที่ต้องดำเนินการ
                 </button>
             </nav>
-
-            
             <!-- ตัวเพิ่มคอมเม้นสำนัก1 ถ้าเพิ่มต้องแก้ javascript -->
             <div class="sidebar-right">
                 <div class="sidebar-nav2" id="sidebar-nav1">
                     <h2>สถานะการดำเนินงาน</h2>
-                    <h3>แผนกดิจิทัล <i class="fa-solid fa-message" id="message1"></i>
-                        <i class="fa-solid fa-circle-check" style="color: green;"></i>
+                    <h3>สำหนักงานเทคโนโลยีดิจิทัล <i class="fa-solid fa-message" id="message1"></i>
+                        <i class="fa-regular fa-clock" style="color: rgb(216, 95, 3);"></i>
                     </h3>
-                    <!-- เพิ่มสำนักอื่น ๆ ตามต้องการ -->
                 </div>
-                <!-- เพิ่มกรองใส่ข้อความ -->
-                <div class="filter">
-                    <p>ผู้รับผิดชอบ : </p>
-                    <p>เวลา : </p>
-                    <div class="greeting-box">
-                        ยินดีต้อนรับ!
-                    </div>
-                </div>
-                
-    
+                <input type="radio" name="staff" id="staff1" value="staff1">
+                <label for="staff1">ยืนยันดำเนินการแก้ไข</label><br>
 
+                <input type="radio" name="staff" id="staff2" value="staff2">
+                <label for="staff2">ปฏิเสธ</label><br>
+
+                <input type="radio" name="staff" id="staff3" value="staff3">
+                <label for="staff3">อื่นๆ</label><br>
+
+                <!-- เพิ่มกล่องข้อความ -->
+                <div class="message-box" id="messageBox">
+                    <textarea id="user-message" rows="4" cols="50" placeholder="กรุณาใส่ข้อความที่นี่..."></textarea>
+                    <button id="submitButton" style="margin-top: 10px;">ยืนยัน</button>
+                </div>
             </div>
+
 
             <form>
                 <div class="card mt-4">
@@ -113,14 +114,14 @@
                                 <div class="form-group">
                                     <div class="custom-font-size">
                                         <p>
-                                            <strong>ชื่อ - นามสกุล :</strong> <span
-                                                th:text="${complaint.complaintType}" />
+                                            <strong>ชื่อ - นามสกุล : นางสาวโชติกา เอี่ยมสอาด</strong> 
+                                            <span th:text="${complaint.complaintType}" />
                                         </p>
                                         <p>
-                                            <strong>e-mail :</strong> <span th:text="${complaint.service}" />
+                                            <strong>e-mail : chotika@gmail.com</strong> <span th:text="${complaint.service}" />
                                         </p>
                                         <p>
-                                            <strong>สถานะปัจจุบัน :</strong> <span th:text="${complaint.status}" />
+                                            <strong>สถานะปัจจุบัน : นักศึกษา</strong> <span th:text="${complaint.status}" />
                                         </p>
 
                                     </div>
@@ -144,23 +145,23 @@
                                 <div class="form-group">
                                     <div class="custom-font-size">
                                         <p>
-                                            <strong>หัวข้อคำร้อง :</strong> <span
+                                            <strong>หัวข้อคำร้อง : แจ้งปัญหา</strong> <span
                                                 th:text="${complaint.complaintType}" />
                                         </p>
                                         <p>
-                                            <strong>การบริการ :</strong> <span th:text="${complaint.service}" />
+                                            <strong>การบริการ : WIFI</strong> <span th:text="${complaint.service}" />
                                         </p>
                                         <p>
-                                            <strong>รายละเอียด :</strong> <span th:text="${complaint.detail}" />
+                                            <strong>รายละเอียด/สถานที่ : มีปัญหา WIFI ใช้ไม่ได้ที่หอใน 19</strong> <span th:text="${complaint.detail}" />
                                         </p>
                                         <p>
-                                            <strong>ไฟล์ :</strong> <span th:text="${complaint.file}" />
+                                            <strong>ไฟล์ : ตัวอย่างไฟล์.pdf</strong> <span th:text="${complaint.file}" />
                                         </p>
                                         <p>
-                                            <strong>สถานะ :</strong> <span th:text="${complaint.status}" />
+                                            <strong>สถานะ : กำลังดำเนินการ</strong> <span th:text="${complaint.status}" />
                                         </p>
                                         <p>
-                                            <strong>คำอธิบาย :</strong> <span th:text="${complaint.comment}" />
+                                            <strong>การยินยอม : ยินยอมให้เผยแพร่คำร้องเรียน</strong> <span th:text="${complaint.comment}" />
                                         </p>
                                     </div>
                                 </div>
@@ -172,14 +173,12 @@
 
         </div>
 
-
-
-        </div>
     </div>
     <!-- Script สำหรับการทำงานของ Bootstrap และ Script ที่คุณเขียนเพิ่มเติม -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+
     <!-- สคริปต์ที่คุณเขียนเพิ่มเติม -->
     <script>
         const toggler = document.querySelector(".btn");
@@ -187,6 +186,8 @@
             document.querySelector("#sidebar").classList.toggle("collapsed");
         });
     </script>
+
 </body>
+
 
 </html>

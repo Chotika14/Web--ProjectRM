@@ -13,7 +13,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background-color: rgb(30, 22, 113);
+    background-color: rgb(74, 135, 226);
     border-bottom: 1px solid #000000;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 3);
 }
@@ -96,12 +96,14 @@ textarea::placeholder {
     border: none; /* ลบเส้นขอบ */
     border-radius: 5px; /* ทำให้มีมุมโค้ง */
     cursor: pointer; /* เปลี่ยนเคอเซอร์เป็นรูปแบบของตัวชี้เมาส์ */
-    font-size: 14px; /* ขนาดตัวอักษร */
+    font-size: 13px; /* ขนาดตัวอักษร */
+    margin-left: 230px; /* กำหนดระยะห่างด้านซ้าย */
 }
 
 #submitButton:hover {
     background-color: #4548a0; /* เปลี่ยนสีพื้นหลังเมื่อชี้เมาส์ */
 }
+
 
 
 /* ไอค่อนข้อความ */
@@ -135,8 +137,8 @@ li {
 
 /* แถบเมนู */
 #sidebar { 
-    max-width: 350px;
-    min-width: 350px;
+    max-width: 264px;
+    min-width: 264px;
     transition: all 0.35s ease-in-out;
     z-index: 1111;
     background-color: rgb(255, 255, 255);
@@ -145,7 +147,7 @@ li {
 
 /* Sidebar collapse ตัวไลด์ */
 #sidebar.collapsed {
-    margin-left: -350px;
+    margin-left: -264px;
 }
 
 /* ตัว main */
@@ -220,7 +222,7 @@ a.sidebar-link {
 }
 
 a.sidebar-link:hover {
-    color:rgb(30, 22, 113);
+    color:rgb(74, 135, 226);
 }
 
 /* p จำนวนคำร้องของเมนู */
@@ -233,7 +235,7 @@ a.sidebar-link:hover {
 
 
 form {
-    width: 870px;
+    width: 950px;
     height: auto;
     padding-left: 20px;
 }
@@ -253,7 +255,7 @@ form {
 }
 
 .card-header{
-    background-color: rgb(30, 22, 113);
+    background-color: rgb(74, 135, 226);
 }
 
 /* การจัดขนาดของข้อความใน card */

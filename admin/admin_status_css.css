@@ -11,7 +11,7 @@ body {
     margin: 0;
 }
 .navbar {
-    background-color: rgb(29, 26, 114);
+    background-color: rgb(74, 107, 226);
     border-bottom: 1px solid #000000; /* เพิ่มเส้นกรอบด้านล่าง */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 3); /* เพิ่มเงา */
 }
@@ -47,8 +47,8 @@ li {
 
 /* แถบเมนู */
 #sidebar { 
-    max-width: 350px;
-    min-width: 350px;
+    max-width: 264px;
+    min-width: 264px;
     transition: all 0.35s ease-in-out;
     z-index: 1111;
     background-color: rgb(255, 255, 255);
@@ -57,7 +57,34 @@ li {
 
 /* Sidebar collapse ตัวไลด์ */
 #sidebar.collapsed {
-    margin-left: -350px;
+    margin-left: -264px;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #e9ecef;
+    position: relative;
+    display: block;
+    font-size: 1rem;
+    padding-left: -20px;
+}
+
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
 }
 
 /* ตัว main */
@@ -101,22 +128,17 @@ li {
 
 .sidebar-header1 {
     color: #000000;
-    font-size: 1rem; /*ขนาดชื่อแสดง*/
+    font-size: .8rem;
     display: flex;
     align-items: center; /* จัดให้องค์ประกอบแนวตั้งตรงกลาง */
-    padding: 2rem 3.5rem 0.2rem; /* เพิ่มตำแหน่งส่วนนี้*/
+    padding: 2rem 3.5rem .7rem;
 }
 
 .sidebar-header1 p {
     display: block; /* ทำให้ <p> เป็นบล็อก */
     margin-bottom: 5px; /* ระยะห่างด้านล่างของ <p> */
-    padding: 1rem 0rem .7rem;
 }
-.sidebar-item1{
-    color: #000000;
-    font-size: .75rem;
-    padding: 1.5rem .10rem;
-}
+
 
 .sidebar-header {
     color: #000000;
@@ -133,63 +155,58 @@ a.sidebar-link {
 }
 
 a.sidebar-link:hover {
-    color:rgb(30, 22, 113);
-}
-
-/* p จำนวนคำร้องของเมนู */
-.sidebar-item p { 
-    float: right;
-    color: #848484;
-    margin-left: 5px;
-    margin-bottom: 0;
+    color: #6d6d6d;
 }
 
 
-
-/* ระยะห่าง */
-.flex-container {
-    margin-top: 17px; /* ลดระยะห่างระหว่าง .flex-container กับ .content */
-}
-
-.table th{
-    text-align: center;
-    vertical-align: middle;
-    border: none; /* ลบเส้นกรอบ */
-    border-bottom: 1px solid #000;
-    font-size:15px;
-}
-.table td {
-    text-align: center;
-    vertical-align: middle;
-    border: none; /* ลบเส้นกรอบ */
-    border-bottom: 1px solid #000; /* เพิ่มเส้นกรอบนอนระหว่างเซลล์ */
-    font-size:13px;
-}
+form {
+    width: auto;
+    height: auto;
     
-/* ส่วนของตาราง */
-.table {
-    background-color: rgba(255, 255, 255, 1);
-    margin-top: 15px; /* ระยะห่างด้านบนของตาราง */
-    border-radius: 5px; /* มุมโค้งขอบตาราง */
-    width: 97%;
-    margin-left: auto; /* จัดตำแหน่งตารางตรงกลาง */
-    margin-right: auto; /* จัดตำแหน่งตารางตรงกลาง */
-    border-collapse: separate; /* ให้เซลล์แยกกัน */
-    border-spacing: 0px 10px; /* กำหนดระยะห่างระหว่างเซลล์ทางแนวนอนเท่ากับ 10px */
-
 }
 
-/* เส้นแนวนอนระหว่างเซลล์ */
-.table tr td {
-    border-bottom: 1px solid #000; /* เพิ่มเส้นกรอบนอนระหว่างเซลล์ */
+/* การจัดขนาดของกรอบ card ตัวคุมใหญ่ */
+.card {
+    max-width: 1200px; /* กำหนดขนาดของ card */
+    margin: auto; /* จัดให้ card อยู่ตรงกลางของหน้าจอ */
+    border: 1px solid #414141; /* เส้นขอบของ card */
+    border-radius: 10px; /* รอบขอบของ card */
 }
 
-#h2 {
-    font-size: 15px; /* ขนาดตัวอักษร */
-    color: #333; /* สีข้อความ */
-    margin-left: 20px; /* เพิ่มระยะห่างทางซ้าย */
-    padding-bottom: 0px; /* การเพิ่มระยะห่างด้านล่างของข้อความ */
+.card-header{
+    background-color: rgb(74, 107, 226);
 }
+
+/* การจัดขนาดของข้อความใน card */
+.card-header h5 {
+    color: #ffffff;
+    font-size: 17px; /* ขนาดของข้อความใน card-header */
+}
+
+
+.sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+#submitBtn button {
+    background-color: rgb(74, 107, 226); /* เปลี่ยนสีพื้นหลัง */
+    color: white; /* เปลี่ยนสีตัวอักษร */
+    border: none; /* ลบเส้นขอบ */
+    padding:5px 10px; /* ปรับขนาด padding */
+    border-radius: 10px; /* ปรับขนาดของมุม */
+    font-size: 13px;
+}
+
+#submitBtn button:hover {
+    background-color: rgb(69, 96, 195); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: white; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+}
+
+
+
 
 
 

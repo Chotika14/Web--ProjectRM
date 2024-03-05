@@ -49,14 +49,27 @@
                         </a>
                     </li>
                     <li class="sidebar-header">
-                        คำร้อง
+                        หัวข้อ
                     </li>
                     <li class="sidebar-item">
-                        <a href="com.html" class="sidebar-link">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
+                            aria-expanded="false" aria-controls="pages">
                             <i class="fa-solid fa-pen pe-2"></i>
-                            ยื่นคำร้อง
+                            เมนู
                         </a>
-                    </li>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="com.html" class="sidebar-link">ยื่นคำร้อง</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="com.html" class="sidebar-link">แจ้งปัญหา</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="com.html" class="sidebar-link">ข้อเสนอแนะ</a>
+                            </li>
+                        </ul>
+                    </li> 
+    
                     <li class="sidebar-item">
                         <a href="history.html" class="sidebar-link">
                             <i class="fas fa-history pe-2"></i>
@@ -80,6 +93,7 @@
                 <h2 id="h2">คำร้องล่าสุด</h2>
                 <table class="table table-bordered">
                     <thead class="table head">
+                    <thead>
                         <tr>
                             <th>วันที่</th>
                             <th>หัวข้อคำร้อง</th>
@@ -89,13 +103,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Data 1</td>
-                            <td>Data 2</td>
-                            <td>Data 3</td>
-                            <td>Data 4</td>
+                            <td>01/01/66</td>
+                            <td>แจ้งปัญหา</td>
+                            <td>WIFI</td>
+                            <td>อยู่ระหว่างดำเนินการ</td>
                         </tr>
                     </tbody>
-                </table>
             </div>            
         </div>
     </div>
