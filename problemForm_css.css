@@ -11,7 +11,7 @@ body {
     margin: 0;
 }
 .navbar {
-    background-color: rgb(74, 107, 226);
+    background-color: rgba(167, 59, 36, 1);
     border-bottom: 1px solid #000000; /* เพิ่มเส้นกรอบด้านล่าง */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 3); /* เพิ่มเงา */
 }
@@ -138,7 +138,11 @@ a.sidebar-link {
     display: block; /* ทำให้ <p> เป็นบล็อก */
     margin-bottom: 5px; /* ระยะห่างด้านล่างของ <p> */
 }
-
+.sidebar-item1{
+    color: #000000;
+    font-size: .75rem;
+    padding: 1.5rem .10rem;
+}
 
 .sidebar-header {
     color: #000000;
@@ -158,66 +162,61 @@ a.sidebar-link:hover {
     color: #6d6d6d;
 }
 
-
-form {
-    width: auto;
-    height: auto;
-    
+.box {
+    margin-top: 70px;
+    margin-left: 50px;
 }
 
-/* การจัดขนาดของกรอบ card ตัวคุมใหญ่ */
-.card {
-    max-width: 1200px; /* กำหนดขนาดของ card */
-    margin: auto; /* จัดให้ card อยู่ตรงกลางของหน้าจอ */
-    border: 1px solid #414141; /* เส้นขอบของ card */
-    border-radius: 10px; /* รอบขอบของ card */
+.boxheader {
+    border-bottom: 2px solid #8b1717;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    font-size: 30px;
 }
 
-.card-header{
-    background-color: rgb(74, 107, 226);
+.checkbox-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    width: calc(100% - 42px);
+    text-align: center; /* จัดตำแหน่งข้อความในกล่องตามแนวนอน */
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
-/* การจัดขนาดของข้อความใน card */
-.card-header h5 {
-    color: #ffffff;
-    font-size: 17px; /* ขนาดของข้อความใน card-header */
+.checkbox-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    height: 100px;
+    background-color: #f5f5f5;
+    width: calc(100% - 42px);
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.checkbox-container p {
+    margin: 0; /* กำหนดระยะห่างขอบลิงก์ */
+    color: #333; /* สีข้อความ */
+    font-weight: bold; /* ตัวหนา */
+}
+
+.checkbox-container:hover p {
+    color: #555; /* สีข้อความเมื่อเมาส์ไฮไลท์ */
 }
 
 
-.sticky-bottom {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 999;
-}
-
-#submitBtn button {
-    background-color: rgb(61, 224, 53); /* เปลี่ยนสีพื้นหลัง */
-    color: white; /* เปลี่ยนสีตัวอักษร */
-    border: none; /* ลบเส้นขอบ */
-    padding:5px 10px; /* ปรับขนาด padding */
-    border-radius: 10px; /* ปรับขนาดของมุม */
-    font-size: 13px;
-}
-
-#submitBtn button:hover {
-    background-color: rgb(77, 161, 99); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    color: white; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
-}
 
 
-#deleteBtn button {
-    background-color:rgb(195, 69, 69); /* เปลี่ยนสีพื้นหลัง */
-    color: white; /* เปลี่ยนสีตัวอักษร */
-    border: none; /* ลบเส้นขอบ */
-    padding:5px 10px; /* ปรับขนาด padding */
-    border-radius: 10px; /* ปรับขนาดของมุม */
-    font-size: 13px;
-}
 
-#deleteBtn button:hover {
-    background-color: rgb(202, 5, 5); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    color: white; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+.checkbox-container a:hover {
+    color: #555; /* สีของข้อความเมื่อเมาส์ไฮไลท์ */
 }
 
 

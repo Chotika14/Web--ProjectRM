@@ -11,7 +11,7 @@ body {
     margin: 0;
 }
 .navbar {
-    background-color: rgb(74, 107, 226);
+    background-color: rgba(167, 59, 36, 1);
     border-bottom: 1px solid #000000; /* เพิ่มเส้นกรอบด้านล่าง */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 3); /* เพิ่มเงา */
 }
@@ -138,7 +138,11 @@ a.sidebar-link {
     display: block; /* ทำให้ <p> เป็นบล็อก */
     margin-bottom: 5px; /* ระยะห่างด้านล่างของ <p> */
 }
-
+.sidebar-item1{
+    color: #000000;
+    font-size: .75rem;
+    padding: 1.5rem .10rem;
+}
 
 .sidebar-header {
     color: #000000;
@@ -158,66 +162,49 @@ a.sidebar-link:hover {
     color: #6d6d6d;
 }
 
+.flex-container{
+   margin-top: 20px;
+}
 
-form {
-    width: auto;
-    height: auto;
+
+.table th{
+    text-align: center;
+    vertical-align: middle;
+    border: none; /* ลบเส้นกรอบ */
+    border-bottom: 1px solid #000;
+    font-size:15px;
+}
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    border: none; /* ลบเส้นกรอบ */
+    border-bottom: 1px solid #000; /* เพิ่มเส้นกรอบนอนระหว่างเซลล์ */
+    font-size:13px;
+}
     
+/* ส่วนของตาราง */
+.table {
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 15px; /* ระยะห่างด้านบนของตาราง */
+    border-radius: 5px; /* มุมโค้งขอบตาราง */
+    width: 97%;
+    margin-left: auto; /* จัดตำแหน่งตารางตรงกลาง */
+    margin-right: auto; /* จัดตำแหน่งตารางตรงกลาง */
+    border-collapse: separate; /* ให้เซลล์แยกกัน */
+    border-spacing: 0px 10px; /* กำหนดระยะห่างระหว่างเซลล์ทางแนวนอนเท่ากับ 10px */
+
 }
 
-/* การจัดขนาดของกรอบ card ตัวคุมใหญ่ */
-.card {
-    max-width: 1200px; /* กำหนดขนาดของ card */
-    margin: auto; /* จัดให้ card อยู่ตรงกลางของหน้าจอ */
-    border: 1px solid #414141; /* เส้นขอบของ card */
-    border-radius: 10px; /* รอบขอบของ card */
+/* เส้นแนวนอนระหว่างเซลล์ */
+.table tr td {
+    border-bottom: 1px solid #000; /* เพิ่มเส้นกรอบนอนระหว่างเซลล์ */
 }
 
-.card-header{
-    background-color: rgb(74, 107, 226);
-}
-
-/* การจัดขนาดของข้อความใน card */
-.card-header h5 {
-    color: #ffffff;
-    font-size: 17px; /* ขนาดของข้อความใน card-header */
-}
-
-
-.sticky-bottom {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 999;
-}
-
-#submitBtn button {
-    background-color: rgb(61, 224, 53); /* เปลี่ยนสีพื้นหลัง */
-    color: white; /* เปลี่ยนสีตัวอักษร */
-    border: none; /* ลบเส้นขอบ */
-    padding:5px 10px; /* ปรับขนาด padding */
-    border-radius: 10px; /* ปรับขนาดของมุม */
-    font-size: 13px;
-}
-
-#submitBtn button:hover {
-    background-color: rgb(77, 161, 99); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    color: white; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
-}
-
-
-#deleteBtn button {
-    background-color:rgb(195, 69, 69); /* เปลี่ยนสีพื้นหลัง */
-    color: white; /* เปลี่ยนสีตัวอักษร */
-    border: none; /* ลบเส้นขอบ */
-    padding:5px 10px; /* ปรับขนาด padding */
-    border-radius: 10px; /* ปรับขนาดของมุม */
-    font-size: 13px;
-}
-
-#deleteBtn button:hover {
-    background-color: rgb(202, 5, 5); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    color: white; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+#h2 {
+    font-size: 15px; /* ขนาดตัวอักษร */
+    color: #333; /* สีข้อความ */
+    margin-left: 20px; /* เพิ่มระยะห่างทางซ้าย */
+    padding-bottom: 0px; /* การเพิ่มระยะห่างด้านล่างของข้อความ */
 }
 
 

@@ -43,13 +43,13 @@
                             <i class="fa-solid fa-file-lines pe-2"></i>
                             รายการที่กำลังดำเนินการ
                         </a>
-                    </li> 
+                    </li>
                     <li class="sidebar-item">
                         <a href="#.html" class="sidebar-link">
                             <i class="fa-solid fa-file-lines pe-2"></i>
                             รายการที่รอส่วนอื่น
                         </a>
-                    </li> 
+                    </li>
                     <li class="sidebar-item">
                         <a href="#.html" class="sidebar-link">
                             <i class="fa-solid fa-file-lines pe-2"></i>
@@ -70,19 +70,19 @@
                             <i class="fa-solid fa-gear pe-2"></i>
                             รายการสถานภาพ
                         </a>
-                    </li> 
+                    </li>
                     <li class="sidebar-item">
                         <a href="#.html" class="sidebar-link">
                             <i class="fa-solid fa-gear pe-2"></i>
                             รายการประเภท
                         </a>
-                    </li>  
+                    </li>
                     <li class="sidebar-item">
                         <a href="#.html" class="sidebar-link">
                             <i class="fa-solid fa-gear pe-2"></i>
                             รายการหมวดหมู่
                         </a>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </aside>
@@ -138,14 +138,16 @@
                                 <div class="form-group">
                                     <div class="custom-font-size">
                                         <p>
-                                            <strong>ชื่อ - นามสกุล : นางสาวโชติกา เอี่ยมสอาด</strong> 
+                                            <strong>ชื่อ - นามสกุล : นางสาวโชติกา เอี่ยมสอาด</strong>
                                             <span th:text="${complaint.complaintType}" />
                                         </p>
                                         <p>
-                                            <strong>e-mail : chotika@gmail.com</strong> <span th:text="${complaint.service}" />
+                                            <strong>e-mail : chotika@gmail.com</strong> <span
+                                                th:text="${complaint.service}" />
                                         </p>
                                         <p>
-                                            <strong>สถานะปัจจุบัน : นักศึกษา</strong> <span th:text="${complaint.status}" />
+                                            <strong>สถานะปัจจุบัน : นักศึกษา</strong> <span
+                                                th:text="${complaint.status}" />
                                         </p>
 
                                     </div>
@@ -176,16 +178,20 @@
                                             <strong>การบริการ : WIFI</strong> <span th:text="${complaint.service}" />
                                         </p>
                                         <p>
-                                            <strong>รายละเอียด/สถานที่ : มีปัญหา WIFI ใช้ไม่ได้ที่หอใน 19</strong> <span th:text="${complaint.detail}" />
+                                            <strong>รายละเอียด/สถานที่ : มีปัญหา WIFI ใช้ไม่ได้ที่หอใน 19</strong> <span
+                                                th:text="${complaint.detail}" />
                                         </p>
                                         <p>
-                                            <strong>ไฟล์ : ตัวอย่างไฟล์.pdf</strong> <span th:text="${complaint.file}" />
+                                            <strong>ไฟล์ : ตัวอย่างไฟล์.pdf</strong> <span
+                                                th:text="${complaint.file}" />
                                         </p>
                                         <p>
-                                            <strong>สถานะ : กำลังดำเนินการ</strong> <span th:text="${complaint.status}" />
+                                            <strong>สถานะ : กำลังดำเนินการ</strong> <span
+                                                th:text="${complaint.status}" />
                                         </p>
                                         <p>
-                                            <strong>การยินยอม : ยินยอมให้เผยแพร่คำร้องเรียน</strong> <span th:text="${complaint.comment}" />
+                                            <strong>การยินยอม : ยินยอมให้เผยแพร่คำร้องเรียน</strong> <span
+                                                th:text="${complaint.comment}" />
                                         </p>
                                     </div>
                                 </div>

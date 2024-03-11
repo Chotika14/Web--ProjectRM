@@ -184,43 +184,41 @@ form {
 }
 
 
-.sticky-bottom {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 999;
+.box {
+    margin-top: 70px;
+    margin-left: 50px;
 }
 
-#submitBtn button {
-    background-color: rgb(61, 224, 53); /* เปลี่ยนสีพื้นหลัง */
-    color: white; /* เปลี่ยนสีตัวอักษร */
-    border: none; /* ลบเส้นขอบ */
-    padding:5px 10px; /* ปรับขนาด padding */
-    border-radius: 10px; /* ปรับขนาดของมุม */
-    font-size: 13px;
+.boxheader {
+    border-bottom: 2px solid #8b1717;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    font-size: 30px;
 }
 
-#submitBtn button:hover {
-    background-color: rgb(77, 161, 99); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    color: white; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
-}
-
-
-#deleteBtn button {
-    background-color:rgb(195, 69, 69); /* เปลี่ยนสีพื้นหลัง */
-    color: white; /* เปลี่ยนสีตัวอักษร */
-    border: none; /* ลบเส้นขอบ */
-    padding:5px 10px; /* ปรับขนาด padding */
-    border-radius: 10px; /* ปรับขนาดของมุม */
-    font-size: 13px;
-}
-
-#deleteBtn button:hover {
-    background-color: rgb(202, 5, 5); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    color: white; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+.checkbox-container {
+    border: 1px solid #ccc;
+    padding: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    width: calc(100% - 42px);
+    text-align: center; /* จัดตำแหน่งข้อความในกล่องตามแนวนอน */
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 
+.checkbox-container p {
+    margin: 0; /* กำหนดระยะห่างขอบลิงก์ */
+    color: #333; /* สีข้อความ */
+    font-weight: bold; /* ตัวหนา */
+}
+
+.checkbox-container:hover p {
+    color: #555; /* สีข้อความเมื่อเมาส์ไฮไลท์ */
+}
 
 
 /* Responsive */
